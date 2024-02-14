@@ -13,10 +13,12 @@
   "devDependencies": {
     "dotenv": "^16.4.4",
     "electron": "^28.2.2",
-    "electron-reloader": "^1.2.3"
+    "electron-reloader": "^1.2.3",
+    "jsdoc": "^4.0.2"
   },
   "scripts": {
     "start": "electron .",
-    "dev:live": "electron-reload src/*"
+    "dev:live": "electron-reload src/*",
+    "generate-docs": "jsdoc -c ./jsdoc.json"
   }
 }
