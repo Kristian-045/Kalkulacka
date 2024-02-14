@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Page</title>
+    <title>Kalkulačka</title>
     <link rel="stylesheet" href="style.css">
+    <link href="./style/output.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Let's make a <br>Calculator 🧮</h1>
+<body class="flex flex-wrap  text-white">
+<!--    <h1 class="bg-black w-full">Let's make a <br>Calculator 🧮</h1>-->
+<div class="w-[450px] bg-[#22252d] rounded-[40px]">
+    <div id="display" class=" h-[300px] flex flex-col justify-end pr-[40px] pb-[50px]">
+        <div class="flex justify-end  text-right text-[32px] tracking-wide pb-2 ">
+            <h3>186 </h3>
+            <img class="w-[25px] mx-3 pt-[8px] " alt="x" src="img/x.svg">
+            <h3>424 </h3>
+
+        </div>
+        <h2 class="w-full text-right text-[50px] font-semibold tracking-wide">78864</h2>
+
+    </div>
+    <div id="keyboard" class="bg-[#393b42] w-full rounded-[45px] pt-[20px] pb-[25px] px-[10px]
+                                text-[30px] ">
+        <div id="row1" class="k-row text-blue-500 w-full grid grid-cols-1 ">
+            <div class="text-center grid grid-cols-4 cursor-pointer ">
+                <p class="w-full hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">AC</p>
+                <p class="w-full hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">n!</p>
+                <div class=" flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                    <img class="w-[32px] mx-3 pt-[8px] " alt="percento" src="img/percent.svg">
+                </div>
+                <div class=" flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                    <img class="w-[20px] mx-3 pt-[8px] " alt="deleno" src="img/divide.svg">
+                </div>
+            </div>
+        </div>
+        <div id="row2" class="k-row w-full grid grid-cols-4 cursor-pointer ">
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">7</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">8</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">9</p>
+            <div class=" flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                <img class="w-[20px] mx-3 pt-[8px] " alt="x" src="img/x.svg">
+            </div>
+
+        </div>
+        <div id="row3" class="k-row w-full grid grid-cols-4 cursor-pointer ">
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">4</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">5</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">6</p>
+            <div class=" flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                <img class="w-[20px] mx-3 pt-[8px] " alt="minus" src="img/minus.svg">
+            </div>
+
+        </div>
+        <div id="row4" class="k-row w-full grid grid-cols-4 cursor-pointer ">
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">4</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">0</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">.</p>
+            <p class=" text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2  text-blue-500">=</p>
+
+
+        </div>
+
+
+    </div>
+</div>
 </body>
 </html>
