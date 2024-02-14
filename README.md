@@ -1,4 +1,4 @@
-**Prostredi**
+**Prostredie**
 ------
 Windows 64bit
 
