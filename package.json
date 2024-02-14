@@ -19,6 +19,7 @@
   "scripts": {
     "start": "electron .",
     "dev:live": "electron-reload src/*",
-    "generate-docs": "jsdoc -c ./jsdoc.json"
+    "generate-docs": "jsdoc -c ./jsdoc.json",
+    "test": "mocha src/tests.js"
   }
 }
