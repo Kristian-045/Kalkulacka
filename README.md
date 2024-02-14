@@ -11,6 +11,6 @@ Number crunchers
 - xvlcekm00 Matej Vlček
 - xandrar00 Roman Andraščík
 
-**Licence**
+**Licencie**
 -------
 GNU v3
