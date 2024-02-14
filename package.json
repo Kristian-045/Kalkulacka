@@ -1,0 +1,22 @@
+{
+  "name": "Kalkulacka",
+  "version": "1.0.0",
+  "description": "kalkulacka",
+  "main": "src/main.js",
+  "author": "All contributors",
+  "contributors": [
+    "Michal Dzurík <xdzurim00@vutbr.cz>",
+    "Kristián Kaleta <xkaletk00@vutbr.cz>",
+    "Matej Vlček <xvlcekm00@vutbr.cz>"
+  ],
+  "license": "GNU GPL V3",
+  "devDependencies": {
+    "dotenv": "^16.4.4",
+    "electron": "^28.2.2",
+    "electron-reloader": "^1.2.3"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev:live": "electron-reload src/*"
+  }
+}
