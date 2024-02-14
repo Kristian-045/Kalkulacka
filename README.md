@@ -5,7 +5,7 @@ Windows 64bit
 **Autori**
 ------
 
-Number cruncher
+Number crunchers
 - xdzurim00 Michal Dzurík
 - xkaletak00 Kristián Kaleta
 - xvlcekm00 Matej Vlček 
