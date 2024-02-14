@@ -7,7 +7,8 @@
   "contributors": [
     "Michal Dzurík <xdzurim00@vutbr.cz>",
     "Kristián Kaleta <xkaletk00@vutbr.cz>",
-    "Matej Vlček <xvlcekm00@vutbr.cz>"
+    "Matej Vlček <xvlcekm00@vutbr.cz>",
+    "Roman Andraščík <xandrar00@vutbr.cz>"
   ],
   "license": "GNU GPL V3",
   "devDependencies": {
