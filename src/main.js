@@ -9,20 +9,33 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 500,
-    height: 800,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-  });
+  if (process.env.NODE_ENV !== 'development') {
+    mainWindow = new BrowserWindow({
+      width: 500,
+      height: 800,
+      webPreferences: {
+        nodeIntegration: true,
+      },
+    });
+  }
+  else{
+    // Development specific settings
+    mainWindow = new BrowserWindow({
+      width: 1200,
+      height: 800,
+      webPreferences: {
+        nodeIntegration: true,
+      },
+    });
+
+    mainWindow.webContents.openDevTools();
+  }
 
   const startUrl = url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true,
   });
-
 
   mainWindow.loadURL(startUrl);
   mainWindow.setTitle('Kalkulacka');
