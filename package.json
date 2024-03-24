@@ -28,6 +28,8 @@
     "test": "mocha src/tests.js",
     "electron-start": "electron .",
     "tailwind-start": "npx tailwindcss -i ./src/style/input.css -o ./src/style/output.css --watch"
-
+  },
+  "dependencies": {
+    "mocha": "^10.3.0"
   }
 }
