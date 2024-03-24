@@ -21,7 +21,7 @@ describe('Testing subtracting numbers function', function (){
     })
 });
 
-describe('Testing subtracting numbers function', function (){
+describe('Testing multiplication of numbers function', function (){
     it('should multiply number right',function(){
         assert.equal(math.multiplication(1,2),2);
         assert.equal(math.multiplication(-2,2),-4);
@@ -31,7 +31,7 @@ describe('Testing subtracting numbers function', function (){
     })
 });
 
-describe('Testing subtracting numbers function', function (){
+describe('Testing dividion of numbers function', function (){
     it('should divide number right',function(){
         assert.equal(math.division(1,2),0.5);
         assert.equal(math.division(-2,2),-1);
@@ -40,7 +40,7 @@ describe('Testing subtracting numbers function', function (){
         assert.equal(math.division(1,3),0.3333333333333333);
     })
     it('should not divide number right',function(){
-        assert.equal(math.division(10,0),Error);
+        assert.equal(math.division(10,0),'Division by zero!');
     })
 });
 
@@ -52,8 +52,8 @@ describe('Testing factorial of numbers function', function (){
         assert.equal(math.factorial(0),1);
     })
     it('should not do factorial right',function(){
-        assert.throws(math.factorial(-2));
-        assert.throws(math.factorial(0.5656));
+        assert.equal(math.factorial(-2),'Factorial of negative number!');
+        assert.equal(math.factorial(0.5656),'Factorial of floating number!');
     })
 });
 
@@ -73,13 +73,14 @@ describe('Testing rooting of numbers function', function (){
     it('should root number right',function(){
         assert.equal(math.rooting(1,2),1);
         assert.equal(math.rooting(1,3),1);
+        assert.equal(math.rooting(9,2),3);
         assert.equal(math.rooting(0.5656,4),0.8672161363);
     })
     it('should not root number right',function(){
-        assert.equal(math.rooting(-125,2),Error);
-        assert.equal(math.rooting(8,2.26496),Error);
-        assert.equal(math.rooting(8,0),Error);
-        assert.equal(math.rooting(-125,3),-5);
+        assert.equal(math.rooting(-125,2),'Cannot compute negative number');
+        assert.equal(math.rooting(8,2.26496),'Rooting with floating number!');
+        assert.equal(math.rooting(8,0),'Cannot compute 0th root!');
+        assert.equal(math.rooting(-125,3),'Cannot compute negative number');
     })
 });
 
@@ -92,7 +93,7 @@ describe('Testing modulo of numbers function', function (){
         assert.equal(math.modulo(77,3),2);
     })
     it('should not return modulo right',function(){
-        assert.equal(math.modulo(10,0),Error);
+        assert.equal(math.modulo(10,0),'Division by zero!');
     })
 });
 

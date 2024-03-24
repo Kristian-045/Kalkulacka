@@ -1,17 +1,17 @@
 module.exports = {
 
     addition: function(x, y) {
-        return ( x + y);
+        return (x + y);
     },
     subtraction: function(x, y) {
-        return ( x - y);
+        return (x - y);
     },
     multiplication: function (x, y) {
         return (x * y);
     },
     division: function (x, y) {
         if (y === 0) {
-            throw new Error('Division by zero!');
+            return 'Division by zero!';
         }
         return (x / y);
     },
@@ -20,10 +20,10 @@ module.exports = {
             return 1;
         }
         if (x < 0) {
-            throw new Error('Factorial of negative number!');
+            return 'Factorial of negative number!';
         }
         if ((x % 1) !== 0) {
-            throw new Error('Factorial of floating number!');
+            return 'Factorial of floating number!';
         }
         let sum = 1;
         for (let i = x; i > 0; i--) {
@@ -36,19 +36,22 @@ module.exports = {
     },
     rooting: function (x, y) {
         if (y === 0) {
-            throw new Error('Cannot compute 0th root!');
+            return 'Cannot compute 0th root!';
         }
         if (x < 0) {
-            throw new Error('Cannot compute negative number')
+            return 'Cannot compute negative number';
         }
-        if (y % 2 === 0) {
-            throw new Error('Factorial of floating number!');
+        if (y % 2 === 0 && x < 0) {
+            return 'Even root of negative number';
+        }
+        if (y % 1 !== 0) {
+            return 'Rooting with floating number!';
         }
         return (x ** (1/y));
     },
     modulo: function (x, y) {
         if (y === 0) {
-            throw new Error('Division by zero!');
+            return 'Division by zero!';
         }
         return (x % y);
     },
