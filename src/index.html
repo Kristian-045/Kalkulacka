@@ -17,32 +17,32 @@
 
         </div>
         <div class="relative">
-            <input id="calculatorDisplay" type="text" pattern="^[0-9+\/*s!-]+$" class="bg-transparent w-96 text-right text-[50px] font-semibold tracking-wide outline-0" value="120">
+            <input aria-label="input" id="calculatorDisplay" type="text" pattern="^[0-9+\/*s!-]+$" class="bg-transparent w-96 text-right text-[50px] font-semibold tracking-wide outline-0" value="120">
             <a href="#" id="backspace" class="calculator-button absolute left-96 top-1/2 -translate-y-1/2 ml-1.5">
                 <img class="h-[35px] mx-3 pt-[8px]" alt="backspace" src="img/backspace.svg">
             </a>
         </div>
     </div>
-    <div id="keyboard" class="bg-[#393b42] w-full rounded-[45px] pt-[20px] pb-[25px] px-[10px]
+    <div id="keyboard" class="bg-[#393b42] w-full rounded-[45px] pt-[10px] pb-[15px] px-[10px]
                                 text-[30px] ">
         <div id="row1" class="k-row text-blue-500 w-full grid grid-cols-1 ">
             <div class="text-center grid grid-cols-4 cursor-pointer ">
-                <a href="#" id="factorial" class="calculator-button hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 decoration-0">n!</a>
-                <a href="#" id="modulo" class="calculator-button flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
-                    <img class="w-[25px] mx-3 pt-[8px] " alt="modulo" src="img/percent.svg">
+                <a href="#" id="modulo" class="calculator-button hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 decoration-0">mod</a>
+                <a href="#" id="factorial" class="calculator-button flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                    n!
                 </a>
-                <a href="#" id="devide" class="calculator-button flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
-                    <img class="w-[20px] mx-3 pt-[8px] " alt="devide" src="img/divide.svg">
+                <a href="#" id="power" class="calculator-button flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                    ^
                 </a>
-                <a href="#" id="add" class="calculator-button hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">+</a>
+                <a href="#" id="root" class="calculator-button hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">√</a>
             </div>
         </div>
         <div id="row2" class="k-row w-full grid grid-cols-4 cursor-pointer ">
             <a href="#" id="7" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">7</a>
             <a href="#" id="8" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">8</a>
             <a href="#" id="9" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">9</a>
-            <a href="#" id="multiply" class="calculator-button  flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
-                <img class="w-[20px] mx-3 pt-[8px] " alt="multiply" src="img/x.svg">
+            <a href="#" id="divide" class="calculator-button text-blue-500 flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                ÷
             </a>
 
         </div>
@@ -50,20 +50,27 @@
             <a href="#" id="4" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">4</a>
             <a href="#" id="5" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">5</a>
             <a href="#" id="6" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">6</a>
-            <a href="#" id="subtract" class="calculator-button  flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
-                <img class="w-[20px] mx-3 pt-[8px] " alt="subtract" src="img/minus.svg">
+            <a href="#" id="multiply" class="calculator-button text-blue-500 flex justify-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">
+                ×
             </a>
 
         </div>
         <div id="row4" class="k-row w-full grid grid-cols-4 cursor-pointer ">
-            <a href="#" id="3" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">1</a>
+            <a href="#" id="1" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">1</a>
             <a href="#" id="2" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">2</a>
-            <a href="#" id="1" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">3</a>
-            <a href="#" id="equals" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2  text-blue-500">=</a>
+            <a href="#" id="3" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">3</a>
+            <a href="#" id="minus" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2  text-blue-500">=</a>
 
 
         </div>
+        <div id="row5" class="k-row w-full grid grid-cols-4 cursor-pointer ">
+            <a href="#" id="0" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">0</a>
+            <a href="#" id="." class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 ">.</a>
+            <a href="#" id="equals" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2 text-blue-500 ">=</a>
+            <a href="#" id="plus" class="calculator-button  text-center hover:bg-[#323438] active:bg-[#242426] rounded-[12px] py-4 m-2  text-blue-500">+</a>
 
+
+        </div>
 
     </div>
 </div>

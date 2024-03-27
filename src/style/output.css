@@ -605,10 +605,6 @@ video {
   width: 25px;
 }
 
-.w-\[32px\] {
-  width: 32px;
-}
-
 .w-\[450px\] {
   width: 450px;
 }
@@ -708,6 +704,14 @@ video {
 
 .pt-\[8px\] {
   padding-top: 8px;
+}
+
+.pb-\[15px\] {
+  padding-bottom: 15px;
+}
+
+.pt-\[10px\] {
+  padding-top: 10px;
 }
 
 .text-center {
