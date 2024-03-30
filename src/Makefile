@@ -17,7 +17,7 @@ run:
 	cd .. && npm start
 
 profile:
-	echo "Profile" # TODO: Implement
+	cd .. && npm run profiling
 
 help:
 	echo "Run 'npm install' and then run 'npm start'"
