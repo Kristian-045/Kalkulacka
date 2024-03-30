@@ -8,13 +8,13 @@ clean:
 	echo "Clean" # TODO: Implement
 
 test:
-	npm run test
+	cd .. && npm run test
 
 doc:
-	npm run generate-docs
+	cd .. && npm run generate-docs
 
 run:
-	npm start
+	cd .. && npm start
 
 profile:
 	echo "Profile" # TODO: Implement
@@ -23,4 +23,4 @@ help:
 	echo "Run 'npm install' and then run 'npm start'"
 
 all:
-	npm i
+	cd .. && npm i
