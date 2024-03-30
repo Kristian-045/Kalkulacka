@@ -55,6 +55,12 @@ calculatorDisplay.addEventListener('keypress', (event) =>{
         return;
     }
 
+    if (!regexOperators.test(event.key)) {
+        event.preventDefault();
+        calculatorDisplay.value = calculatorDisplay.value + event.key;
+        return;
+    }
+
 
     // When We input operators do something
 })

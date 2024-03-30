@@ -2,11 +2,11 @@
     "source": {
         "includePattern": ".+\\.js(doc|x)?$",   
         "include": ["./src/"],                       
-        "exclude": ["node_modules"]             
+        "exclude": ["./src/doc"]
     },
     "recurseDepth": 10,                         
     "opts": {
-        "destination": "./src/dokumentace/",               
+        "destination": "./src/doc/",               
         "recurse": true                         
     }
 }
