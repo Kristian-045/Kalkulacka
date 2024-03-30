@@ -1,0 +1,15 @@
+10.3.2024 - Dokončený frontend
+25.3.2024 - Dokončená matematická knižnica aj s testmi
+15.4.2024 - Každý člen tímu aby mali spravenú svoju časť práce
+20.4.2024 - Implementácia inštalačných prvkov 
+
+xkaletk00 - frontend 
+xdzurim00 - spájanie frontendu s knižnicou
+xvlcekm00 - matematická knižnica + unit testy
+xandrar00 - matematická knižnica + unit testy
+
+#komunikacia
+messenger / face2face
+
+#zvolený systém pro správu verzí a hosting
+git, github
