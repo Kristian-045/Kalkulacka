@@ -1,29 +1,46 @@
-const puppeteer = require('puppeteer');
-const path = require('path');
+const { addition, subtraction, multiplication, division, factorial, exponential, rooting, modulo } = require('./math');
 
-async function runProfiling() {
-    const browser = await puppeteer.launch({
-        args: ['--remote-debugging-port=9222'], // Enable debugging port
-        headless: false
-    });
+var input = [];
 
-    const page = await browser.newPage();
+process.stdin.on('data', (data) => {
+    // Process the data as needed
+    input.push(stringArrayToIntArray(data.toString().split(' ')))
+});
 
-    // Loading app
-    const filePath = path.join(__dirname, 'index.html');
-    const fileUrl = `file://${filePath}`;
-    await page.goto(fileUrl);
+function stringArrayToIntArray(array){
+    let out = [];
+    for (let i = 0; i < array.length; i++) {
+        out[i] = parseInt(array[i]);
+    }
 
-    // Start profiling
-    await page.tracing.start({ path: 'profiling/profile.json' });
-
-    // Place to perform some actions on web
-
-    // Stop profiling
-    await page.tracing.stop();
-
-    // Close the browser
-    await browser.close();
+    return out;
 }
 
-runProfiling();
+function addArrayWithExponent(myArray,exponent = 1) {
+
+    var arrayTotal = myArray.length;
+    var totalSum = 0;
+
+    for (var x = 0; x < arrayTotal; x++) {
+        totalSum = addition(exponential(myArray[x],exponent),totalSum) ;
+    }
+    return totalSum;
+}
+
+// Handle end of input stream
+process.stdin.on('end', () => {
+    input = input[0];
+    let N = input.length;
+    let x = multiplication(division(1,N),addArrayWithExponent(input));
+    let s = rooting(
+        multiplication(
+            division(1,subtraction(N,1)),
+            subtraction(
+                addArrayWithExponent(input,2),
+                multiplication(N,exponential(x,2))
+            )
+        )
+        ,2);
+
+    console.log(s);
+});

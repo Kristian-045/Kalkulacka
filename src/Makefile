@@ -1,3 +1,8 @@
+.PHONY: all build pack clean test doc run profile help
+
+all:
+	cd .. && npm i && make profile
+
 build:
 	echo "build" # TODO: Implement
 
@@ -16,11 +21,8 @@ doc:
 run:
 	cd .. && npm start
 
-profile:
-	cd .. && npm run profiling
+profile: profiling.js ../profiling/profiling.c
+	gcc ../profiling/profiling.c -o ./profiling
 
 help:
 	echo "Run 'npm install' and then run 'npm start'"
-
-all:
-	cd .. && npm i
