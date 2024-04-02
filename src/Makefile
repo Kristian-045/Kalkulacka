@@ -1,28 +1,28 @@
 .PHONY: all build pack clean test doc run profile help
 
 all:
-	cd .. && npm i && make profile
+	@cd .. && npm i && cd src/ && make profile
 
 build:
-	echo "build" # TODO: Implement
+	@echo "build" # TODO: Implement
 
 pack:
-	echo "Pack" # TODO: Implement
+	@echo "Pack" # TODO: Implement
 
 clean:
-	echo "Clean" # TODO: Implement
+	@echo "Clean" # TODO: Implement
 
 test:
-	cd .. && npm run test
+	@cd .. && npm run test
 
 doc:
-	cd .. && npm run generate-docs
+	@cd .. && npm run generate-docs
 
 run:
-	cd .. && npm start
+	@cd .. && npm start
 
 profile: profiling.js ../profiling/profiling.c
 	gcc ../profiling/profiling.c -o ./profiling
 
 help:
-	echo "Run 'npm install' and then run 'npm start'"
+	@echo "Run 'npm install' and then run 'npm start'"
