@@ -19,8 +19,14 @@ for (let i = 0; i < calculatorButtons.length; i++){
 }
 
 // keyboard support without being focused on display
-document.addEventListener('keypress',(event) =>{
+document.addEventListener('keydown',(event) =>{
     let calcValue = calculatorDisplay.value;
+
+    if (event.key.toLowerCase().trim() === 'backspace'){
+        event.preventDefault();
+        backspace()
+        return;
+    }
     if (calculatorDisplay.id === document.activeElement.id) {
         return;
     }
