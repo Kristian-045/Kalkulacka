@@ -1,0 +1,12 @@
+[*.js]
+indent_style = tab
+indent_size = 1
+end_of_line = lf
+charset = utf-8
+
+
+[*.html]
+indent_style = tab
+indent_size = 1
+end_of_line = lf
+charset = utf-8
