@@ -1,12 +1,17 @@
 {
-    "source": {
-        "includePattern": ".+\\.js(doc|x)?$",   
-        "include": ["./src/"],                       
-        "exclude": ["./src/doc"]
-    },
-    "recurseDepth": 10,                         
-    "opts": {
-        "destination": "./src/doc/",               
-        "recurse": true                         
-    }
+  "source": {
+    "includePattern": ".+\\.js(doc|x)?$",
+    "include": [
+      "./src/"
+    ],
+    "exclude": [
+      "./docs"
+    ],
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "recurseDepth": 10,
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true
+  }
 }
