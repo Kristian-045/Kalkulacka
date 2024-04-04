@@ -1,3 +1,9 @@
+/**
+ * @file Tests for mathematical library
+ * @author Matej Vlček
+ * @author Roman Andraščik
+ */
+
 const assert = require('assert');
 const math = require('./math');
 
@@ -78,7 +84,7 @@ describe('Testing rooting of numbers function', function (){
     })
     it('should not root number right',function(){
         assert.equal(math.rooting(-125,2),'Cannot compute negative number');
-        assert.equal(math.rooting(8,2.26496),'Rooting with floating number!');
+        assert.equal(math.rooting(8,2.26496),'Degree is floating number!');
         assert.equal(math.rooting(8,0),'Cannot compute 0th root!');
         assert.equal(math.rooting(-125,3),'Cannot compute negative number');
     })
