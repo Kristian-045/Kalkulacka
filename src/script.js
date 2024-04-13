@@ -175,6 +175,9 @@ function calc(leftSide,rightSide,specialChar){
     if(specialChar == '^'){
         return math.exponential(leftSide,rightSide);
     }else if(specialChar == '√'){
+        if(isNaN(leftSide)){
+            leftSide =2;
+        }
         if(isNaN(math.rooting(rightSide,leftSide))){
             errBool = 1;
             errMsg = math.rooting(rightSide,leftSide);
