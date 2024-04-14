@@ -117,51 +117,58 @@ function backspace(){
 function parse(probString){
     let direction=1,rightIndex,leftIndex,subStringReplaced,subStringCalculated;
     errBool=0;
-    //get rid of all parenthesis
+    //get rid of all parentheses
     for(let i = 0; i < probString.length; i+=direction){
         if(probString[i] === ")" && direction === 1){
             rightIndex = i;
             direction = -1;
         }else if(probString[i] === "(" && direction === -1){
             leftIndex = i;
-            subStringReplaced = probString.substring(leftIndex,rightIndex);
-            subStringCalculated = probString.substring(leftIndex+1,rightIndex-1);
+            subStringReplaced = probString.substring(leftIndex,rightIndex+1);
+            subStringCalculated = probString.substring(leftIndex+1,rightIndex);
             // replace the expresssion in () with the result and change dir back to 1
-            probString.replace(subStringReplaced,findSpecialChar(subStringCalculated));
+            probString = probString.replace(subStringReplaced,findSpecialChar(subStringCalculated));
             if(errBool===1){
                 return errMsg;
             }
             direction = 1;
         }
     }
-    // calculate the rest of the problem without the parenthesis
+    // calculate the rest of the problem without the parentheses
     return findSpecialChar(probString);
 }
 function findSpecialChar(stringToCalc){
     let result=stringToCalc,leftSide,rightSide,RIndex,LIndex;
     for(let i = 0; i < regexOpWeighted.length; i++){ // goes through the special characters that represent mathematical operations
-        for(let j = 0; j < stringToCalc.length; j++){ // goes through the string
-            if(stringToCalc[j]===regexOpWeighted[i]){
+        for(let j = 0; j < result.length; j++){ // goes through the string
+            if(result[j]===regexOpWeighted[i]){
                 //find leftsideIndex and create leftSide substring
-                for(let k=j-1; k > 0;k--){
-                    if(isNaN(stringToCalc[k]) && stringToCalc[k] !== "." && stringToCalc[k] !== " "){
+                for(let k=j-1; k >= 0;k--){
+                    if(isNaN(result[k]) && result[k] != "." || k == 0){
+                        if(k!=0){
+                            k++;
+                        }
                         LIndex = k;
-                        leftSide = stringToCalc.subString(k,j-1);
+                        leftSide = result.substring(k,j);
                         break;
                     }
                 }
                 //find rightsideIndex and creare rightSide substring
-                for(let k=j+1; k < stringToCalc.length ; k++){
-                    if(isNaN(stringToCalc[k]) && stringToCalc[k] !== "." && stringToCalc[k] !== " "){
+                for(let k=j+1; k < result.length ; k++){
+                    if(isNaN(result[k]) && result[k] != "." || k+1 == result.length){
+                        if(k+1==result.length){
+                            k++;
+                        }
                         RIndex = k;
-                        rightSide = stringToCalc.subString(k,j+1);
+                        rightSide = result.substring(j+1,k);
                         break;
                     }
                 }
                 // create substring that is to be replaced by the result
-                let replacethis = stringToCalc.subString(LIndex,RIndex);
+                let replacethis = result.subString(LIndex,RIndex);
                 // replace the substring in result by number calculated from calc
-                result.replace(replacethis,calc(leftSide,rightSide,regexOpWeighted[i]))
+                result = result.replace(replacethis,calc(leftSide,rightSide,regexOpWeighted[i]))
+                j=0;
                 if(errBool===1){
                     return errMsg;
                 }
@@ -175,7 +182,7 @@ function calc(leftSide,rightSide,specialChar){
     if(specialChar == '^'){
         return math.exponential(leftSide,rightSide);
     }else if(specialChar == '√'){
-        if(isNaN(leftSide)){
+        if(leftSide=" "){
             leftSide =2;
         }
         if(isNaN(math.rooting(rightSide,leftSide))){
@@ -212,7 +219,7 @@ function calc(leftSide,rightSide,specialChar){
             return math.division(leftSide,rightSide);
         }
     }else if(specialChar == '+'){
-        return math.addition(leftSide,rightSide);
+        return math.addition(leftSide*1,rightSide*1);
     }else if(specialChar == '-'){
         return math.subtraction(leftSide,rightSide);
     }
