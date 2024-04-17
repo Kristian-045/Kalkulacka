@@ -1,16 +1,16 @@
-**Prostredie**
-------
+## **Prostredie**
+
 Windows 64bit
 
-**Autori**
-------
+## **Autori**
 
 Number crunchers
+
 - xdzurim00 Michal Dzurík
 - xkaletak00 Kristián Kaleta
 - xvlcekm00 Matej Vlček
 - xandrar00 Roman Andraščík
 
-**Licencie**
--------
+## **Licencie**
+
 GNU v3

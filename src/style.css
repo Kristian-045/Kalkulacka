@@ -1,19 +1,19 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
 }
 
 h1 {
-    text-align: center;
-    color: #eee;
-    font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
 }
