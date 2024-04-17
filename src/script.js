@@ -112,6 +112,7 @@ function backspace(){
     calculatorDisplay.value = calculatorDisplay.value.substring(0,calculatorDisplay.value.length - 1)
 }
  let errBool, errMsg;  
+ let negFlagR=false,negFlagL=false;
 // Works on PEMDAS basis
 // Returns the result of the problem
 function parse(probString){
@@ -124,10 +125,18 @@ function parse(probString){
             direction = -1;
         }else if(probString[i] === "(" && direction === -1){
             leftIndex = i;
-            subStringReplaced = probString.substring(leftIndex,rightIndex+1);
+            if(probString[i-1]==="-"){//checks if the values in () should be inverted
+                negFlagR=true;
+                negFlagL=true;
+                subStringReplaced = probString.substring(leftIndex-1,rightIndex+1);
+            }else{
+                subStringReplaced = probString.substring(leftIndex,rightIndex+1);
+            }
             subStringCalculated = probString.substring(leftIndex+1,rightIndex);
             // replace the expresssion in () with the result and change dir back to 1
             probString = probString.replace(subStringReplaced,findSpecialChar(subStringCalculated));
+            negFlagR=false;
+            negFlagL=false;
             if(errBool===1){
                 return errMsg;
             }
@@ -142,30 +151,47 @@ function findSpecialChar(stringToCalc){
     for(let i = 0; i < regexOpWeighted.length; i++){ // goes through the special characters that represent mathematical operations
         for(let j = 0; j < result.length; j++){ // goes through the string
             if(result[j]===regexOpWeighted[i]){
+                if(result[0]=="-" && j==0){
+                    continue;
+                }
                 //find leftsideIndex and create leftSide substring
                 for(let k=j-1; k >= 0;k--){
                     if(isNaN(result[k]) && result[k] != "." || k == 0){
                         if(k!=0){
                             k++;
                         }
+                        if(result[k-1] == "-" && isNaN(result[k-2])){
+                            k--;
+                        }
                         LIndex = k;
                         leftSide = result.substring(k,j);
+                        if(negFlagL==true){
+                            leftSide = -leftSide;
+                        }
                         break;
                     }
                 }
                 //find rightsideIndex and creare rightSide substring
                 for(let k=j+1; k < result.length ; k++){
+                    rightSide = "";
                     if(isNaN(result[k]) && result[k] != "." || k+1 == result.length){
+                        if(result[k]=="-" ){
+                            rightSide +="-";
+                            continue;
+                        }
                         if(k+1==result.length){
                             k++;
                         }
                         RIndex = k;
-                        rightSide = result.substring(j+1,k);
+                        rightSide += result.substring(j+1,k);
+                        if(negFlagR==true){
+                            rightSide = -rightSide;
+                        }
                         break;
                     }
                 }
                 // create substring that is to be replaced by the result
-                let replacethis = result.subString(LIndex,RIndex);
+                let replacethis = result.substring(LIndex,RIndex);
                 // replace the substring in result by number calculated from calc
                 result = result.replace(replacethis,calc(leftSide,rightSide,regexOpWeighted[i]))
                 j=0;
@@ -182,7 +208,7 @@ function calc(leftSide,rightSide,specialChar){
     if(specialChar == '^'){
         return math.exponential(leftSide,rightSide);
     }else if(specialChar == '√'){
-        if(leftSide=" "){
+        if(leftSide==" "){
             leftSide =2;
         }
         if(isNaN(math.rooting(rightSide,leftSide))){
