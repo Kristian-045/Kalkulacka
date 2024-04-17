@@ -3,7 +3,7 @@ const calculatorDisplay = document.getElementById('calculatorDisplay');
 const calculatorButtons = document.querySelectorAll('.calculator-button');
 
 // Importing math module 
-const math = require('./math');
+//const math = require('./math');
 
 // Regex for only characters we support
 const regexAll = /^[0-9+\/*s!-]+$/;

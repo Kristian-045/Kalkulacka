@@ -1,6 +1,6 @@
 'use sctrict';
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow,Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -47,6 +47,36 @@ function createWindow() {
 
 app.on('ready', function () {
     createWindow();
+
+    const template = [
+      {
+        label: 'Help',
+        click: () => {
+          const helpWindow = new BrowserWindow({
+            width: 600,
+            height: 400,
+            parent: mainWindow,
+            modal: true,
+            webPreferences: {
+              nodeIntegration: true
+            },
+            autoHideMenuBar: true
+          });
+
+          const startUrl = url.format({
+            pathname: path.join(__dirname, 'help.html'),
+            protocol: 'file:',
+            slashes: true,
+          });
+
+          helpWindow.loadURL(startUrl);
+          helpWindow.setTitle('Kalkulacka');
+        }
+      }
+    ];
+  
+    var menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
 
     if (process.env.NODE_ENV === 'development') {
         // Development specific settings
