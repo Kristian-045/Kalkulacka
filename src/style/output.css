@@ -573,20 +573,16 @@ video {
   margin-right: 0.75rem;
 }
 
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
 
 .ml-1\.5 {
   margin-left: 0.375rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 
 .flex {
