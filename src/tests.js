@@ -11,8 +11,8 @@ const assert = require("assert");
 // Importing math module for testing
 const math = require("./math");
 
-// Importing script module for testing the parser
-const script = require("./script");
+// Importing parser module for testing the parser
+const parser = require("./parser");
 
 // Testing the addition function
 describe("Testing adding numbers function", function () {
@@ -128,28 +128,28 @@ describe("Testing modulo of numbers function", function () {
 //Testing problems without parentheses
 describe("Testing problems without parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(script.parse("25+6-7"), "24");
-		assert.equal(script.parse("25+6*7"), "67");
-		assert.equal(script.parse("25+6*7+2^2"), "71");
-		assert.equal(script.parse("25+6*7+2^2 - √4"), "69");
-		assert.equal(script.parse("25+6*7+2^2 - 3√16"), "67");
+		assert.equal(parser.parse("25+6-7"), "24");
+		assert.equal(parser.parse("25+6*7"), "67");
+		assert.equal(parser.parse("25+6*7+2^2"), "71");
+		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69");
+		assert.equal(parser.parse("25+6*7+2^2 - 3√16"), "67");
 	});
 });
 //Testing problems with parentheses
 describe("Testing problems with parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(script.parse("(25+6)*7"), "217");
-		assert.equal(script.parse("25+((6*(7+2))^2)"), "2941");
-		assert.equal(script.parse("(25+6)*(7+2)"), "279");
-		assert.equal(script.parse("((25+6)*(7+2))"), "279");
+		assert.equal(parser.parse("(25+6)*7"), "217");
+		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941");
+		assert.equal(parser.parse("(25+6)*(7+2)"), "279");
+		assert.equal(parser.parse("((25+6)*(7+2))"), "279");
 	});
 });
 //Testing error messages
 describe("Testing incorrect problems", function () {
 	it("should return an error message", function () {
-		assert.equal(script.parse("0√312213"), "Cannot compute 0th root!");
-		assert.equal(script.parse("228922%0"), "Division by zero!");
-		assert.equal(script.parse("0.53!"), "Factorial of floating number!");
-		assert.equal(script.parse("240089%0"), "Division by zero!");
+		assert.equal(parser.parse("0√312213"), "Cannot compute 0th root!");
+		assert.equal(parser.parse("228922%0"), "Division by zero!");
+		assert.equal(parser.parse("0.53!"), "Factorial of floating number!");
+		assert.equal(parser.parse("240089%0"), "Division by zero!");
 	});
 });
