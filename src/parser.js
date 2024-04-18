@@ -1,6 +1,6 @@
 // Special characters sorted by PEMDAS weight
 const regexOpWeighted = ["^", "√", "!", "%", "*", "/", "+", "-"];
-const math = require('./math');
+const math = require("./math");
 
 let errBool, errMsg;
 let negFlagR = false,
@@ -174,6 +174,6 @@ function calc(leftSide, rightSide, specialChar) {
 
 module.exports = {
 	parse,
-    findSpecialChar,
-    calc,
+	findSpecialChar,
+	calc,
 };
