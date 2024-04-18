@@ -16,13 +16,9 @@
 				<div
 					class="flex justify-end text-right text-[32px] tracking-wide pb-2 w-96"
 				>
-					<p>186</p>
-					<img
-						class="w-[25px] mx-3 pt-[8px]"
-						alt="x"
-						src="img/x.svg"
-					/>
-					<p>424</p>
+					<p id="calculatorHistory" class="text-gray-400">
+						No history
+					</p>
 				</div>
 				<div class="relative">
 					<input
@@ -31,7 +27,7 @@
 						type="text"
 						pattern="^[0-9+\/*s!-]+$"
 						class="bg-transparent w-96 text-right text-[50px] font-semibold tracking-wide outline-0"
-						value="120"
+						placeholder="0"
 					/>
 					<a
 						href="#"
@@ -203,6 +199,6 @@
 				</div>
 			</div>
 		</div>
-		<script src="script.js"></script>
+		<script src="build/bundle.js"></script>
 	</body>
 </html>

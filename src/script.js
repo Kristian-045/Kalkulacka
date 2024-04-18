@@ -1,13 +1,11 @@
 const calculatorDisplay = document.getElementById("calculatorDisplay");
+const calculatorHistory = document.getElementById("calculatorHistory");
 const calculatorButtons = document.querySelectorAll(".calculator-button");
 
-// Importing math module
-//const math = require('./math');
+const Parser = require("./parser");
 
 // Regex for only characters we support
 const regexAll = /^[0-9+\/*s!-]+$/;
-// Regex for operators
-const regexOperators = /^[+\/*s!-]+$/;
 
 // button click support
 for (let i = 0; i < calculatorButtons.length; i++) {
@@ -21,88 +19,86 @@ for (let i = 0; i < calculatorButtons.length; i++) {
 
 // keyboard support without being focused on display
 document.addEventListener("keydown", (event) => {
-	let calcValue = calculatorDisplay.value;
-
-	if (event.key.toLowerCase().trim() === "backspace") {
-		event.preventDefault();
-		backspace();
-		return;
-	}
 	if (calculatorDisplay.id === document.activeElement.id) {
 		return;
 	}
-	if (!regexAll.test(event.key)) {
-		event.preventDefault();
-		return;
-	}
-	if (!regexOperators.test(event.key)) {
-		event.preventDefault();
-		calculatorDisplay.value = calculatorDisplay.value + event.key;
-		return;
-	}
-
-	if (!shouldInputSymbol(calcValue, event)) {
-		event.preventDefault();
-		return;
-	}
-
-	// When We input operators do something
+	checkInputAndTakeAction(event);
 });
 
 calculatorDisplay.addEventListener("keypress", (event) => {
-	let calcValue = calculatorDisplay.value;
-
-	if (!regexAll.test(event.key)) {
-		event.preventDefault();
-		return;
-	}
-	if (!shouldInputSymbol(calcValue, event)) {
-		event.preventDefault();
-		return;
-	}
-
-	if (!regexOperators.test(event.key)) {
-		event.preventDefault();
-		calculatorDisplay.value = calculatorDisplay.value + event.key;
-		return;
-	}
-
-	// When We input operators do something
+	checkInputAndTakeAction(event);
 });
 
-function shouldInputSymbol(calcValue, event) {
-	if (event.key === "s" && calcValue[calcValue.length - 1] === "s") {
+function checkInputAndTakeAction(event) {
+	if (regexAll.test(event.key)) {
 		event.preventDefault();
-		return false;
+		takeAction(event.key.toLowerCase().trim());
 	}
-	if (event.key === "!" && calcValue[calcValue.length - 1] === "!") {
-		event.preventDefault();
-		return false;
-	}
-
-	return true;
 }
 
-function takeAction(buttonName) {
-	let number = parseInt(buttonName);
-	if (!isNaN(number)) {
-		inputNumber(number);
-		return;
-	}
-
-	switch (buttonName.trim()) {
-		// TODO: add other operations
+function takeAction(key) {
+	key = translate(key);
+	console.log(key);
+	switch (key.trim().toLowerCase()) {
 		case "backspace":
 			backspace();
+			break;
+		case "enter":
+			calculate();
+			break;
+		case "equals":
+			calculate();
+			break;
+		default:
+			calculatorDisplay.value = calculatorDisplay.value + key;
 			break;
 	}
 }
 
-function inputNumber(number) {
-	calculatorDisplay.value = calculatorDisplay.value + number;
+function calculate() {
+	let result = Parser.parse(calculatorDisplay.value);
+	if (isNumber(result)) {
+		calculatorHistory.innerText = calculatorDisplay.value;
+		calculatorDisplay.value = result;
+		return;
+	}
+	alert(result);
+}
+
+function isNumber(str) {
+	// Regular expression to match a number (integer or decimal)
+	const numberRegex = /^-?\d*\.?\d+$/;
+	return numberRegex.test(str);
+}
+
+function translate(key) {
+	var translation = "";
+	var translations = {
+		minus: "-",
+		plus: "+",
+		multiply: "*",
+		divide: "/",
+		factorial: "!",
+		root: "√",
+		modulo: "%",
+		power: "^",
+	};
+
+	translation = translations[key];
+	return translation === undefined ? key : translation;
 }
 
 function backspace() {
+	if (calculatorDisplay.value.length === 0) {
+		return;
+	}
+	if (
+		calculatorDisplay.value === "NaN" ||
+		calculatorDisplay.value === "Error"
+	) {
+		calculatorDisplay.value = "";
+		return;
+	}
 	calculatorDisplay.value = calculatorDisplay.value.substring(
 		0,
 		calculatorDisplay.value.length - 1,
