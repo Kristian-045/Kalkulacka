@@ -132,7 +132,10 @@ describe("Testing problems without parentheses", function () {
 		assert.equal(parser.parse("25+6*7"), "67");
 		assert.equal(parser.parse("25+6*7+2^2"), "71");
 		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69");
-		assert.equal(parser.parse("25+6*7+2^2 - 3√16"), "67");
+		assert.equal(parser.parse("25+6*7+2^2 - 2√16"), "67");
+		assert.equal(parser.parse("2-2-2"), "-2");
+		assert.equal(parser.parse("2--2--2"), "6");
+		assert.equal(parser.parse("2-√4"), "0");
 	});
 });
 //Testing problems with parentheses

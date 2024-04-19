@@ -93,7 +93,7 @@ function findSpecialChar(stringToCalc) {
 						(isNaN(result[k]) && result[k] != ".") ||
 						k + 1 == result.length
 					) {
-						if (result[k] == "-") {
+						if (result[k] == "-" && isNaN(result[k-1])) {
 							rightSide += "-";
 							continue;
 						}
@@ -129,7 +129,7 @@ function calc(leftSide, rightSide, specialChar) {
 	if (specialChar == "^") {
 		return math.exponential(leftSide, rightSide);
 	} else if (specialChar == "√") {
-		if (leftSide == " ") {
+		if (leftSide == " " || leftSide == undefined|| leftSide == "") {
 			leftSide = 2;
 		}
 		if (isNaN(math.rooting(rightSide, leftSide))) {

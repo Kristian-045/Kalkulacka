@@ -42,7 +42,7 @@ function multiplication(x, y) {
  * @returns {number|string} The quotient of x divided by y, or an error message if division by zero.
  */
 function division(x, y) {
-	if (y === 0) {
+	if (y == 0) {
 		return "Division by zero!";
 	}
 	return x / y;
@@ -54,13 +54,13 @@ function division(x, y) {
  * @returns {number|string} The factorial of x, or an error message if x is negative or a floating point number.
  */
 function factorial(x) {
-	if (x === 0 || x === 1) {
+	if (x == 0 || x == 1) {
 		return 1;
 	}
 	if (x < 0) {
 		return "Factorial of negative number!";
 	}
-	if (x % 1 !== 0) {
+	if (x % 1 != 0) {
 		return "Factorial of floating number!";
 	}
 	let sum = 1;
@@ -87,16 +87,16 @@ function exponential(x, y) {
  * @returns {number|string} The nth root of y, or an error message if x or y is invalid.
  */
 function rooting(x, y) {
-	if (y === 0) {
+	if (y == 0) {
 		return "Cannot compute 0th root!";
 	}
 	if (x < 0) {
 		return "Cannot compute negative number";
 	}
-	if (y % 2 === 0 && x < 0) {
+	if (y % 2 == 0 && x < 0) {
 		return "Even root of negative number";
 	}
-	if (y % 1 !== 0) {
+	if (y % 1 != 0) {
 		return "Degree is floating number!";
 	}
 	return x ** (1 / y);
@@ -109,7 +109,7 @@ function rooting(x, y) {
  * @returns {number|string} The remainder of x divided by y, or an error message if division by zero.
  */
 function modulo(x, y) {
-	if (y === 0) {
+	if (y == 0) {
 		return "Division by zero!";
 	}
 	return x % y;
