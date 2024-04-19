@@ -1,0 +1,6 @@
+Thank you for choosing our calculator!! Now we will teach you all you need to know about it!
+The calculator works on PEMDAS basis. You can also use parentheses to specify the priority of
+an expression. The calculator offers a wide variety of functions such as addition, subtraction,
+division, multiplication, modulo, factorial, roots and exponents. The only function with which 
+syntax you might need help is root. You can specify a degree of a root as such: 3√8. If you don't
+specify the degree it defaults to the 2nd root.  
