@@ -137,6 +137,7 @@ describe("Testing problems without parentheses", function () {
 		assert.equal(parser.parse("2--2--2"), "6");
 		assert.equal(parser.parse("2-√4"), "0");
 		assert.equal(parser.parse("2-5!"), "-118");
+		assert.equal(parser.parse("5!^2"), "14400");
 	});
 });
 //Testing problems with parentheses
