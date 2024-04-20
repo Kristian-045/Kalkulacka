@@ -154,5 +154,6 @@ describe("Testing incorrect problems", function () {
 		assert.equal(parser.parse("228922%0"), "Division by zero!");
 		assert.equal(parser.parse("0.53!"), "Factorial of floating number!");
 		assert.equal(parser.parse("240089%0"), "Division by zero!");
+		assert.equal(parser.parse("2-5!"), "-118");
 	});
 });
