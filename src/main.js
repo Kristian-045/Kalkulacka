@@ -4,31 +4,17 @@ const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
 const url = require("url");
 
-require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
-
 let mainWindow;
 
 function createWindow() {
-	if (process.env.NODE_ENV !== "development") {
-		mainWindow = new BrowserWindow({
-			width: 500,
-			height: 800,
-			webPreferences: {
-				nodeIntegration: true,
-			},
-		});
-	} else {
-		// Development specific settings
-		mainWindow = new BrowserWindow({
-			width: 1200,
-			height: 800,
-			webPreferences: {
-				nodeIntegration: true,
-			},
-		});
-
-		mainWindow.webContents.openDevTools();
-	}
+	mainWindow = new BrowserWindow({
+		icon: path.join(__dirname, "src/img/icon.png"),
+		width: 1000, // 500
+		height: 900,
+		webPreferences: {
+			nodeIntegration: true,
+		},
+	});
 
 	const startUrl = url.format({
 		pathname: path.join(__dirname, "index.html"),
@@ -37,7 +23,8 @@ function createWindow() {
 	});
 
 	mainWindow.loadURL(startUrl);
-	mainWindow.setTitle("Kalkulacka");
+	mainWindow.setTitle("BUT Calculator");
+	mainWindow.openDevTools();
 
 	mainWindow.on("closed", function () {
 		mainWindow = null;

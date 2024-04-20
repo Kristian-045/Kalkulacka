@@ -4,3 +4,4 @@ doc/*
 .idea/
 ._*
 src/build/*
+out/
