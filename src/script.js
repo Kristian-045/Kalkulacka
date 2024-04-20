@@ -8,8 +8,8 @@ clearDisplay.style.opacity = '0';
 const Parser = require("./parser");
 
 // Regex for only characters we support
-const regexAll = /^[0-9+\/*s!-^%.]+$/;
-const operations = /^(?![0-9])[+\/*s!-^%]+$/
+const regexAll = /^[0-9+\/*!-^%.√]+$/;
+const operations = /^(?![0-9])[+\/*!-^%√]+$/;
 var translations = {
 	minus: "-",
 	plus: "+",
