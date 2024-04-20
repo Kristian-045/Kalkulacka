@@ -43,7 +43,7 @@ describe("Testing multiplication of numbers function", function () {
 		assert.equal(math.multiplication(-2, 2), -4);
 		assert.equal(math.multiplication(-5, -4), 20);
 		assert.equal(math.multiplication(0, 0), 0);
-		assert.equal(math.multiplication(0.5656, 2.26496), 1.281061376);
+		assert.equal(math.multiplication(0.5656, 2.26496), 1.281061);
 	});
 });
 
@@ -53,8 +53,8 @@ describe("Testing dividion of numbers function", function () {
 		assert.equal(math.division(1, 2), 0.5);
 		assert.equal(math.division(-2, 2), -1);
 		assert.equal(math.division(-20, -4), 5);
-		assert.equal(math.division(0.5656, 2.26496), 0.2497174343034756);
-		assert.equal(math.division(1, 3), 0.3333333333333333);
+		assert.equal(math.division(0.5656, 2.26496), 0.249717);
+		assert.equal(math.division(1, 3), 0.333333);
 	});
 	it("should not divide number right", function () {
 		// Testing division by zero
@@ -81,7 +81,7 @@ describe("Testing exponential numbers function", function () {
 	it("should return the right number", function () {
 		assert.equal(math.exponential(1, 5), 1);
 		assert.equal(math.exponential(-2, 2), 4);
-		assert.equal(math.exponential(-5, -4), -0.0016);
+		assert.equal(math.exponential(-5, -4), 0.001600);
 		assert.equal(math.exponential(25, 0.5), 5);
 		assert.equal(math.exponential(0.5, 3), 0.125);
 		assert.equal(math.exponential(7, 1), 7);
@@ -95,7 +95,7 @@ describe("Testing rooting of numbers function", function () {
 		assert.equal(math.rooting(1, 2), 1);
 		assert.equal(math.rooting(1, 3), 1);
 		assert.equal(math.rooting(9, 2), 3);
-		assert.equal(math.rooting(0.5656, 4), 0.8672161363);
+		assert.equal(math.rooting(0.5656, 4), 0.867216);
 	});
 	it("should not root number right", function () {
 		// Testing invalid scenarios for rooting function
@@ -128,24 +128,24 @@ describe("Testing modulo of numbers function", function () {
 //Testing problems without parentheses
 describe("Testing problems without parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(parser.parse("25+6-7"), "24");
-		assert.equal(parser.parse("25+6*7"), "67");
-		assert.equal(parser.parse("25+6*7+2^2"), "71");
-		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69");
-		assert.equal(parser.parse("25+6*7+2^2 - 2√16"), "67");
-		assert.equal(parser.parse("2-2-2"), "-2");
-		assert.equal(parser.parse("2--2--2"), "6");
-		assert.equal(parser.parse("2-√4"), "0");
+		assert.equal(parser.parse("25+6-7"), "24.000000");
+		assert.equal(parser.parse("25+6*7"), "67.000000");
+		assert.equal(parser.parse("25+6*7+2^2"), "71.000000");
+		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69.000000");
+		assert.equal(parser.parse("25+6*7+2^2 - 2√16"), "67.000000");
+		assert.equal(parser.parse("2-2-2"), "-2.000000");
+		assert.equal(parser.parse("2--2--2"), "6.000000");
+		assert.equal(parser.parse("2-√4"), "0.000000");
+		assert.equal(parser.parse("2-5!"), "-118.000000");
 	});
 });
 //Testing problems with parentheses
 describe("Testing problems with parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(parser.parse("(25+6)*7"), "217");
-		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941");
-		assert.equal(parser.parse("(25+6)*(7+2)"), "279");
-		assert.equal(parser.parse("((25+6)*(7+2))"), "279");
-		assert.equal(parser.parse("2-5!"), "-118");
+		assert.equal(parser.parse("(25+6)*7"), "217.000000");
+		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941.000000");
+		assert.equal(parser.parse("(25+6)*(7+2)"), "279.000000");
+		assert.equal(parser.parse("((25+6)*(7+2))"), "279.000000");
 	});
 });
 //Testing error messages

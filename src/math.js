@@ -12,7 +12,8 @@
  * @returns {number} The sum of x and y.
  */
 function addition(x, y) {
-	return x + y;
+	let res= x+y;
+	return res.toFixed(6);
 }
 
 /**
@@ -22,7 +23,8 @@ function addition(x, y) {
  * @returns {number} The difference of x minus y.
  */
 function subtraction(x, y) {
-	return x - y;
+	let res= x-y;
+	return res.toFixed(6);
 }
 
 /**
@@ -32,7 +34,8 @@ function subtraction(x, y) {
  * @returns {number} The product of x and y.
  */
 function multiplication(x, y) {
-	return x * y;
+	let res = x*y;
+	return res.toFixed(6);
 }
 
 /**
@@ -45,7 +48,8 @@ function division(x, y) {
 	if (y == 0) {
 		return "Division by zero!";
 	}
-	return x / y;
+	let res=x / y;
+	return res.toFixed(6);
 }
 
 /**
@@ -77,7 +81,8 @@ function factorial(x) {
  * @returns {number} The result of x raised to the power of y.
  */
 function exponential(x, y) {
-	return x ** y;
+	let res = x ** y;
+	return res.toFixed(6);
 }
 
 /**
@@ -99,9 +104,9 @@ function rooting(x, y) {
 	if (y % 1 != 0) {
 		return "Degree is floating number!";
 	}
-	return x ** (1 / y);
+	let res = x ** (1/y);
+	return res.toFixed(6);
 }
-
 /**
  * Calculates the remainder of a division operation.
  * @param {number} x - The dividend.
