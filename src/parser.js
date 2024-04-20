@@ -100,6 +100,10 @@ function findSpecialChar(stringToCalc) {
 						if (k + 1 == result.length) {
 							k++;
 						}
+						// Factorial ignore right side
+						if(i==0){
+						    k=j+1;
+						}
 						RIndex = k;
 						rightSide += result.substring(j + 1, k);
 						if (negFlagR == true) {
