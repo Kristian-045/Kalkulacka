@@ -2,7 +2,7 @@
   "source": {
     "includePattern": ".+\\.js(doc|x)?$",
     "include": ["./src/"],
-    "exclude": ["./docs"],
+    "exclude": ["./docs", "./final"],
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "recurseDepth": 10,

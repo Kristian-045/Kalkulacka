@@ -47,7 +47,8 @@
     "prettier": "npx prettier . --write",
     "package": "electron-forge package",
     "build": "electron-forge make",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "webpack": "webpack --mode production"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",

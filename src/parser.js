@@ -1,5 +1,5 @@
 // Special characters sorted by PEMDAS weight
-const regexOpWeighted = ["!","^", "√", "%", "*", "/", "+", "-"];
+const regexOpWeighted = ["!", "^", "√", "%", "*", "/", "+", "-"];
 const math = require("./math");
 
 let errBool, errMsg;
@@ -93,7 +93,7 @@ function findSpecialChar(stringToCalc) {
 						(isNaN(result[k]) && result[k] != ".") ||
 						k + 1 == result.length
 					) {
-						if (result[k] == "-" && isNaN(result[k-1])) {
+						if (result[k] == "-" && isNaN(result[k - 1])) {
 							rightSide += "-";
 							continue;
 						}
@@ -122,14 +122,14 @@ function findSpecialChar(stringToCalc) {
 			}
 		}
 	}
-	return (""+Number(result));
+	return "" + Number(result);
 }
 // returns the result of expression
 function calc(leftSide, rightSide, specialChar) {
 	if (specialChar == "^") {
 		return math.exponential(leftSide, rightSide);
 	} else if (specialChar == "√") {
-		if (leftSide == " " || leftSide == undefined|| leftSide == "") {
+		if (leftSide == " " || leftSide == undefined || leftSide == "") {
 			leftSide = 2;
 		}
 		if (isNaN(math.rooting(rightSide, leftSide))) {

@@ -9,7 +9,7 @@ let mainWindow;
 function createWindow() {
 	mainWindow = new BrowserWindow({
 		icon: path.join(__dirname, "src/img/icon.png"),
-		width: 1000, // 500
+		width: 500,
 		height: 900,
 		webPreferences: {
 			nodeIntegration: true,
@@ -23,8 +23,6 @@ function createWindow() {
 	});
 
 	mainWindow.loadURL(startUrl);
-	mainWindow.setTitle("BUT Calculator");
-	mainWindow.openDevTools();
 
 	mainWindow.on("closed", function () {
 		mainWindow = null;
@@ -39,8 +37,8 @@ app.on("ready", function () {
 			label: "Help",
 			click: () => {
 				const helpWindow = new BrowserWindow({
-					width: 600,
-					height: 400,
+					width: 480,
+					height: 600,
 					parent: mainWindow,
 					modal: true,
 					webPreferences: {
@@ -56,7 +54,6 @@ app.on("ready", function () {
 				});
 
 				helpWindow.loadURL(startUrl);
-				helpWindow.setTitle("Kalkulacka");
 			},
 		},
 	];

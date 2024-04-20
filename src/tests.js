@@ -81,7 +81,7 @@ describe("Testing exponential numbers function", function () {
 	it("should return the right number", function () {
 		assert.equal(math.exponential(1, 5), 1);
 		assert.equal(math.exponential(-2, 2), 4);
-		assert.equal(math.exponential(-5, -4), 0.001600);
+		assert.equal(math.exponential(-5, -4), 0.0016);
 		assert.equal(math.exponential(25, 0.5), 5);
 		assert.equal(math.exponential(0.5, 3), 0.125);
 		assert.equal(math.exponential(7, 1), 7);

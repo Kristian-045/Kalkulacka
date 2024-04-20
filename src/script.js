@@ -3,7 +3,7 @@ const calculatorHistory = document.getElementById("calculatorHistory");
 const calculatorButtons = document.querySelectorAll(".calculator-button");
 const clearDisplay = document.getElementById("clearDisplay");
 
-clearDisplay.style.opacity = '0';
+clearDisplay.style.opacity = "0";
 
 const Parser = require("./parser");
 
@@ -33,7 +33,7 @@ for (let i = 0; i < calculatorButtons.length; i++) {
 
 clearDisplay.addEventListener("click", (event) => {
 	calculatorDisplay.value = "";
-	clearDisplay.style.opacity = '0';
+	clearDisplay.style.opacity = "0";
 });
 
 // keyboard support without being focused on display
@@ -51,18 +51,18 @@ calculatorDisplay.addEventListener("keypress", (event) => {
 function checkInputAndTakeAction(event) {
 	if (event.keyCode === 13) {
 		event.preventDefault();
-		calculate('');
-		return
+		calculate("");
+		return;
 	}
 	if (event.keyCode === 8) {
 		backspace();
-		return
+		return;
 	}
 	console.log(event.key);
 	if (regexAll.test(event.key)) {
 		event.preventDefault();
 		takeAction(event.key.toLowerCase().trim());
-		return
+		return;
 	}
 
 	event.preventDefault();
@@ -80,33 +80,30 @@ function takeAction(key) {
 			backspace();
 			break;
 		default:
-			console.log(key)
-			let prevChar = calcVal.charAt(calcVal.length - 1)
-			if (isAnOperation(prevChar) && isAnOperation(key))
-			{
+			console.log(key);
+			let prevChar = calcVal.charAt(calcVal.length - 1);
+			if (isAnOperation(prevChar) && isAnOperation(key)) {
 				if (prevChar === key) return;
-				if (prevChar !== '!' && key !== '√') return;
-
+				if (prevChar !== "!" && key !== "√") return;
 			}
-			if (prevChar === '.' && key === '.') return;
+			if (prevChar === "." && key === ".") return;
 
 			calculatorDisplay.value = calculatorDisplay.value + key;
 			break;
 	}
 
-	if (calculatorDisplay.value.length > 0){
-		clearDisplay.style.opacity = '1';
-	}
-	else{
-		clearDisplay.style.opacity = '0';
+	if (calculatorDisplay.value.length > 0) {
+		clearDisplay.style.opacity = "1";
+	} else {
+		clearDisplay.style.opacity = "0";
 	}
 }
 
 function isAnOperation(key) {
-	return operations.test(key)
+	return operations.test(key);
 }
 
-function calculate(key = '') {
+function calculate(key = "") {
 	let calcVal = calculatorDisplay.value.trim();
 	let historyVal = calculatorHistory.innerText.trim();
 	let lastChar = calcVal.charAt(calcVal.length - 1);
@@ -115,7 +112,7 @@ function calculate(key = '') {
 		return;
 	}
 
-	if (operations.test(lastChar) && lastChar !== '!') {
+	if (operations.test(lastChar) && lastChar !== "!") {
 		alert("You forgot to enter last number");
 		return;
 	}
@@ -123,7 +120,7 @@ function calculate(key = '') {
 	let historyResult = Parser.parse(historyVal);
 	let result = Parser.parse(calcVal);
 
-	if(historyResult === result){
+	if (historyResult === result) {
 		return;
 	}
 
