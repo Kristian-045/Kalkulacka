@@ -105,7 +105,6 @@ function isAnOperation(key) {
 
 function calculate(key = "") {
 	let calcVal = calculatorDisplay.value.trim();
-	let historyVal = calculatorHistory.innerText.trim();
 	let lastChar = calcVal.charAt(calcVal.length - 1);
 
 	if (calcVal.length === 0) {
@@ -117,12 +116,7 @@ function calculate(key = "") {
 		return;
 	}
 
-	let historyResult = Parser.parse(historyVal);
 	let result = Parser.parse(calcVal);
-
-	if (historyResult === result) {
-		return;
-	}
 
 	if (isNumber(result)) {
 		calculatorHistory.innerText = calcVal;
