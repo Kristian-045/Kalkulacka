@@ -145,6 +145,7 @@ describe("Testing problems with parentheses", function () {
 		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941");
 		assert.equal(parser.parse("(25+6)*(7+2)"), "279");
 		assert.equal(parser.parse("((25+6)*(7+2))"), "279");
+		assert.equal(parser.parse("2-5!"), "-118");
 	});
 });
 //Testing error messages
@@ -154,6 +155,5 @@ describe("Testing incorrect problems", function () {
 		assert.equal(parser.parse("228922%0"), "Division by zero!");
 		assert.equal(parser.parse("0.53!"), "Factorial of floating number!");
 		assert.equal(parser.parse("240089%0"), "Division by zero!");
-		assert.equal(parser.parse("2-5!"), "-118");
 	});
 });
