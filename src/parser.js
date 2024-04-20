@@ -122,7 +122,7 @@ function findSpecialChar(stringToCalc) {
 			}
 		}
 	}
-	return result;
+	return (""+Number(result));
 }
 // returns the result of expression
 function calc(leftSide, rightSide, specialChar) {

@@ -128,24 +128,24 @@ describe("Testing modulo of numbers function", function () {
 //Testing problems without parentheses
 describe("Testing problems without parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(parser.parse("25+6-7"), "24.000000");
-		assert.equal(parser.parse("25+6*7"), "67.000000");
-		assert.equal(parser.parse("25+6*7+2^2"), "71.000000");
-		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69.000000");
-		assert.equal(parser.parse("25+6*7+2^2 - 2√16"), "67.000000");
-		assert.equal(parser.parse("2-2-2"), "-2.000000");
-		assert.equal(parser.parse("2--2--2"), "6.000000");
-		assert.equal(parser.parse("2-√4"), "0.000000");
-		assert.equal(parser.parse("2-5!"), "-118.000000");
+		assert.equal(parser.parse("25+6-7"), "24");
+		assert.equal(parser.parse("25+6*7"), "67");
+		assert.equal(parser.parse("25+6*7+2^2"), "71");
+		assert.equal(parser.parse("25+6*7+2^2 - √4"), "69");
+		assert.equal(parser.parse("25+6*7+2^2 - 2√16"), "67");
+		assert.equal(parser.parse("2-2-2"), "-2");
+		assert.equal(parser.parse("2--2--2"), "6");
+		assert.equal(parser.parse("2-√4"), "0");
+		assert.equal(parser.parse("2-5!"), "-118");
 	});
 });
 //Testing problems with parentheses
 describe("Testing problems with parentheses", function () {
 	it("should return the correct result", function () {
-		assert.equal(parser.parse("(25+6)*7"), "217.000000");
-		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941.000000");
-		assert.equal(parser.parse("(25+6)*(7+2)"), "279.000000");
-		assert.equal(parser.parse("((25+6)*(7+2))"), "279.000000");
+		assert.equal(parser.parse("(25+6)*7"), "217");
+		assert.equal(parser.parse("25+((6*(7+2))^2)"), "2941");
+		assert.equal(parser.parse("(25+6)*(7+2)"), "279");
+		assert.equal(parser.parse("((25+6)*(7+2))"), "279");
 	});
 });
 //Testing error messages
