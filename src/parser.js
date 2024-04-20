@@ -1,5 +1,5 @@
 // Special characters sorted by PEMDAS weight
-const regexOpWeighted = ["^", "√", "!", "%", "*", "/", "+", "-"];
+const regexOpWeighted = ["!","^", "√", "%", "*", "/", "+", "-"];
 const math = require("./math");
 
 let errBool, errMsg;
