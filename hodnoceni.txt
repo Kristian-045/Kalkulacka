@@ -1,0 +1,4 @@
+xkaletk00 100 (frontend, mockup, velenie)
+xdzurim00 98 (spájanie frontend s knižnicou)
+xvlcekm00 100 (matematická knižnica, unit testy, dokumentácia)
+xandrar00 102 (matematická knižnica, unit testy, parsec)
