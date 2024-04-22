@@ -9,7 +9,7 @@
  * Adds two numbers.
  * @param {number} x - The first number to be added.
  * @param {number} y - The second number to be added.
- * @returns {number} The sum of x and y.
+ * @returns {string} The sum of x and y.
  */
 function addition(x, y) {
 	let res = x + y;
@@ -19,8 +19,8 @@ function addition(x, y) {
 /**
  * Subtracts two numbers.
  * @param {number} x - The number to be subtracted from.
- * @param {number} y - The number to subtract.
- * @returns {number} The difference of x minus y.
+ * @param {string} y - The number to subtract.
+ * @returns {string} The difference of x minus y.
  */
 function subtraction(x, y) {
 	let res = x - y;
@@ -30,8 +30,8 @@ function subtraction(x, y) {
 /**
  * Multiplies two numbers.
  * @param {number} x - The first number to be multiplied.
- * @param {number} y - The second number to be multiplied.
- * @returns {number} The product of x and y.
+ * @param {string} y - The second number to be multiplied.
+ * @returns {string} The product of x and y.
  */
 function multiplication(x, y) {
 	let res = x * y;
@@ -41,7 +41,7 @@ function multiplication(x, y) {
 /**
  * Divides two numbers.
  * @param {number} x - The dividend.
- * @param {number} y - The divisor.
+ * @param {string} y - The divisor.
  * @returns {number|string} The quotient of x divided by y, or an error message if division by zero.
  */
 function division(x, y) {
@@ -78,7 +78,7 @@ function factorial(x) {
  * Calculates the result of raising a base to a power.
  * @param {number} x - The base.
  * @param {number} y - The exponent.
- * @returns {number} The result of x raised to the power of y.
+ * @returns {string} The result of x raised to the power of y.
  */
 function exponential(x, y) {
 	let res = x ** y;
@@ -87,7 +87,7 @@ function exponential(x, y) {
 
 /**
  * Calculates the nth root of a number.
- * @param {number} x - The degree of the root.
+ * @param {string} x - The degree of the root.
  * @param {number} y - The radicand.
  * @returns {number|string} The nth root of y, or an error message if x or y is invalid.
  */
