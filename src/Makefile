@@ -8,7 +8,7 @@ build:
 	npm run webpack && npm run make
 
 clean:
-	rm -r ../final
+	cd ../ && find . -mindepth 1 -maxdepth 1 ! -name 'final' -exec rm -rf {} +
 
 test:
 	@cd .. && npm run test
