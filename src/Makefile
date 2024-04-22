@@ -20,7 +20,7 @@ doc:
 run:
 	cd .. && npm start
 
-profile: profiling.js ../profiling/profiling.c
+profile: ../profiling/profiling.c
 	gcc ../profiling/profiling.c -o ./profiling
 
 pack: doc build
