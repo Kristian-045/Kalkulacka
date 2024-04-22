@@ -2,7 +2,7 @@
 repo=https://github.com/Kristian-045/Kalkulacka
 
 all:
-	-cd .. && npm i&& cd src/ && make profile
+	-cd .. && npm i && cd src/ && make profile
 
 build:
 	npm run webpack && npm run make
