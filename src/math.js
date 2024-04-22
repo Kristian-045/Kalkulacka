@@ -19,7 +19,7 @@ function addition(x, y) {
 /**
  * Subtracts two numbers.
  * @param {number} x - The number to be subtracted from.
- * @param {string} y - The number to subtract.
+ * @param {number} y - The number to subtract.
  * @returns {string} The difference of x minus y.
  */
 function subtraction(x, y) {
@@ -30,7 +30,7 @@ function subtraction(x, y) {
 /**
  * Multiplies two numbers.
  * @param {number} x - The first number to be multiplied.
- * @param {string} y - The second number to be multiplied.
+ * @param {number} y - The second number to be multiplied.
  * @returns {string} The product of x and y.
  */
 function multiplication(x, y) {
@@ -41,7 +41,7 @@ function multiplication(x, y) {
 /**
  * Divides two numbers.
  * @param {number} x - The dividend.
- * @param {string} y - The divisor.
+ * @param {number} y - The divisor.
  * @returns {number|string} The quotient of x divided by y, or an error message if division by zero.
  */
 function division(x, y) {
@@ -87,7 +87,7 @@ function exponential(x, y) {
 
 /**
  * Calculates the nth root of a number.
- * @param {string} x - The degree of the root.
+ * @param {number} x - The degree of the root.
  * @param {number} y - The radicand.
  * @returns {number|string} The nth root of y, or an error message if x or y is invalid.
  */
