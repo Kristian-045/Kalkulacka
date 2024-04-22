@@ -23,7 +23,7 @@ profile: profiling.js ../profiling/profiling.c
 	gcc ../profiling/profiling.c -o ./profiling
 
 pack: doc build
-	cd ../ && mkdir -p final && cd final && mkdir -p install && rm -r -f repo && mkdir -p repo && mkdir -p doc && cd repo && git clone $(repo) && cd ../ && mv ../docs/* doc/ && mv ../out/make/deb/x64/* ../final/install/
+	cd ../ && mkdir -p final && cd final && mkdir -p install && cp -n ../src/install.sh ./install/ && cp -n ../src/uninstall.sh ./install/ && rm -r -f repo && mkdir -p repo && mkdir -p doc && cd repo && git clone $(repo) && cd ../ && mv -n ../docs/* doc/ && mv -n ../out/make/deb/x64/* ../final/install/
 
 help:
 	@echo "Run 'npm install' and then run 'npm start'"
