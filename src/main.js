@@ -1,6 +1,6 @@
 "use sctrict";
 
-const { app, BrowserWindow, Menu, ipcMain } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 const url = require("url");
 
@@ -37,8 +37,8 @@ app.on("ready", function () {
 			label: "Help",
 			click: () => {
 				const helpWindow = new BrowserWindow({
-					width: 480,
-					height: 600,
+					width: 620,
+					height: 700,
 					parent: mainWindow,
 					modal: true,
 					webPreferences: {
