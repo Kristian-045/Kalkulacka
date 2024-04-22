@@ -9,18 +9,18 @@
  * Adds two numbers.
  * @param {number} x - The first number to be added.
  * @param {number} y - The second number to be added.
- * @returns {number} The sum of x and y.
+ * @returns {string} The sum of x and y.
  */
 function addition(x, y) {
 	let res = x + y;
-	return res.toFixed(6);
+	return parseFloat(res).toFixed(6);
 }
 
 /**
  * Subtracts two numbers.
  * @param {number} x - The number to be subtracted from.
  * @param {number} y - The number to subtract.
- * @returns {number} The difference of x minus y.
+ * @returns {string} The difference of x minus y.
  */
 function subtraction(x, y) {
 	let res = x - y;
@@ -31,7 +31,7 @@ function subtraction(x, y) {
  * Multiplies two numbers.
  * @param {number} x - The first number to be multiplied.
  * @param {number} y - The second number to be multiplied.
- * @returns {number} The product of x and y.
+ * @returns {string} The product of x and y.
  */
 function multiplication(x, y) {
 	let res = x * y;
@@ -78,7 +78,7 @@ function factorial(x) {
  * Calculates the result of raising a base to a power.
  * @param {number} x - The base.
  * @param {number} y - The exponent.
- * @returns {number} The result of x raised to the power of y.
+ * @returns {string} The result of x raised to the power of y.
  */
 function exponential(x, y) {
 	let res = x ** y;
