@@ -13,7 +13,7 @@
  */
 function addition(x, y) {
 	let res = x + y;
-	return res.toFixed(6);
+	return parseFloat(res).toFixed(6);
 }
 
 /**
