@@ -2,19 +2,23 @@
 repo=https://github.com/Kristian-045/Kalkulacka
 final=xkaletk00_xdzurim00_xvlcekm00_xandrar00
 
+NODE_VERSION := $(shell node --version 2>/dev/null | cut -d 'v' -f 2)
+
+# Check if Node.js version meets the requirement
+ifeq ($(findstring 20.,$(NODE_VERSION)),)
+    # If Node.js is not installed or not version 20.x, print a message with the current version
+    $(error Please install Node.js version 20.x, your current version is $(NODE_VERSION))
+endif
+
 all:
-	-cd .. 
 	sudo apt update -y
 	sudo apt upgrade -y
-	sudo apt install make
-	sudo apt install curl -y
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-	source ~/.bashrc
-	nvm install --lts
-	sudo apt install gcc -y
 	sudo apt install git -y
+	sudo apt install curl -y
+	sudo apt install gcc -y
 	sudo apt install fakeroot -y
-	npm i && cd src/ && make profile
+	npm i
+	make profile
 build:
 	npm run webpack && npm run make
 
