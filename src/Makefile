@@ -3,7 +3,19 @@ repo=https://github.com/Kristian-045/Kalkulacka
 final=xkaletk00_xdzurim00_xvlcekm00_xandrar00
 
 all:
-	-cd .. && npm i && cd src/ && make profile
+	-cd .. && make dep && npm i && cd src/ && make profile
+
+dep:
+	sudo apt update -y
+	sudo apt upgrade -y
+	sudo apt install make
+	sudo apt install curl -y
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+	source ~/.bashrc
+	nvm install --lts
+	sudo apt install gcc -y
+	sudo apt install git -y
+	sudo apt install fakeroot -y
 
 build:
 	npm run webpack && npm run make
