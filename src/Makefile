@@ -1,4 +1,4 @@
-.PHONY: all build pack clean test doc run profile help
+.PHONY: all build pack dep clean test doc run profile help
 repo=https://github.com/Kristian-045/Kalkulacka
 final=xkaletk00_xdzurim00_xvlcekm00_xandrar00
 
