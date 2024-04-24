@@ -1,0 +1,22 @@
+plán
+10.3.2024 - Dokončený frontend
+skutocnosť
+24.2.2024 - ☑
+27.3.2024 - drobné úpravy 
+
+plán
+25.3.2024 - Dokončená matematická knižnica aj s testmi
+skutočnosť
+24.3.2024 - ☑
+19.4.2024 - bug fixing
+
+plán
+15.4.2024 - Každý člen tímu aby mali spravenú svoju časť práce
+skutočnosť
+každý mal svoju prácu spravenú až na nejaké bugy
+
+plán
+20.4.2024 - Implementácia inštalačných prvkov 
+skutočnooť
+21.4.2024 - ☑
+24.4.2024 - úprava na danú virtuálku
